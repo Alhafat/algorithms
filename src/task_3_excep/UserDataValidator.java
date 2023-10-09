@@ -20,11 +20,11 @@ public class UserDataValidator {
         // Проверка количества данных
         if (data.length != 6) {
             if (data.length < 6) {
-                System.out.println("Вы ввели меньше данных, чем требуется!");
+                throw new RuntimeException("Вы ввели меньше данных, чем требуется!");
             } else {
-                System.out.println("Вы ввели больше данных, чем требуется!");
+                throw new RuntimeException("Вы ввели больше данных, чем требуется!");
             }
-            return;
+//            return;
         }
 
         // Извлечение данных из массива
@@ -41,13 +41,12 @@ public class UserDataValidator {
         var dateReg = "\\d{2}\\.\\d{2}\\.\\d{4}";
 
         if (!birthDate.matches(dateReg)) {
-            System.out.println("Дата рождения должна быть указана в формате dd.mm.yyyy.");
-            isValid = false;
+            throw new RuntimeException ("Дата рождения должна быть указана в формате dd.mm.yyyy.");
+//            isValid = false;
         }
 
         if (gender != 'f' && gender != 'm') {
-            System.out.println("Пол должен быть указан символом 'f' или 'm'");
-            isValid = false;
+            throw new RuntimeException("Пол должен быть указан символом 'f' или 'm'");
         }
 
         if (!isValid) {
