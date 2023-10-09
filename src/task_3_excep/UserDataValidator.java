@@ -4,7 +4,7 @@ package task_3_excep;
 /*Иванов Иван Иванович 10.10.2001 1234567890 m*/
 
 import java.io.*;
-import java.util.Arrays;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class UserDataValidator {
@@ -71,15 +71,13 @@ public class UserDataValidator {
 
     public static void write_new_file(String lastName, String[] data) {
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(lastName + ".txt", true), "UTF-8"))) {
+                new FileOutputStream(lastName + ".txt", true), StandardCharsets.UTF_8))) {
             writer.write("--------------------------------------");
             writer.newLine();
-            int len = data.length;
-            for (int i = 0; i < len; i++) {
-                writer.write(data[i] + "\t" + "");
+            for (String datum : data) {
+                writer.write(datum + "\t");
             }
             writer.newLine();
-            writer.close();
         } catch (IOException e) {
             System.out.println(e);
         }
