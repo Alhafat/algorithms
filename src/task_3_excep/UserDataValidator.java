@@ -66,6 +66,7 @@ public class UserDataValidator {
 
 
         write_new_file(lastName, data);
+        scanner.close();
     }
 
     public static void write_new_file(String lastName, String[] data) {
@@ -78,6 +79,7 @@ public class UserDataValidator {
                 writer.write(data[i] + "\t" + "");
             }
             writer.newLine();
+            writer.close();
         } catch (IOException e) {
             System.out.println(e);
         }
