@@ -78,7 +78,7 @@ public class UserDataValidator {
             }
             writer.newLine();
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println("Не удалось произвести запись в файл, " + e);
         }
     }
 }
