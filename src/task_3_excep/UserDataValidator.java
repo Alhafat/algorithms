@@ -49,9 +49,9 @@ public class UserDataValidator {
             throw new RuntimeException("Пол должен быть указан символом 'f' или 'm'");
         }
 
-        if (!isValid) {
-            return;
-        }
+//        if (!isValid) {
+//            return;
+//        }
 
 
         // Вывод введенных данных
